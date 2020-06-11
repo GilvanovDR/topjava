@@ -2,6 +2,10 @@
  * GilvanovDR (c) 2020.
  */
 
+/*
+ * GilvanovDR (c) 2020.
+ */
+
 package ru.javawebinar.topjava.model;
 
 import java.time.LocalDateTime;
@@ -13,6 +17,9 @@ public class MealTo {
 
     private final int calories;
 
+//    private final AtomicBoolean excess;      // filteredByAtomic
+//    private final Boolean excess;            // filteredByReflection
+//    private final Supplier<Boolean> excess;  // filteredByClosure
     private final boolean excess;
 
     public MealTo(LocalDateTime dateTime, String description, int calories, boolean excess) {
@@ -21,6 +28,10 @@ public class MealTo {
         this.calories = calories;
         this.excess = excess;
     }
+
+//    public Boolean getExcess() {
+//        return excess.get();
+//    }
 
     @Override
     public String toString() {
