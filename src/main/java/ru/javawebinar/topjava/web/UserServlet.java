@@ -6,10 +6,6 @@
  * GilvanovDR (c) 2020.
  */
 
-/*
- * GilvanovDR (c) 2020.
- */
-
 package ru.javawebinar.topjava.web;
 
 import org.slf4j.Logger;

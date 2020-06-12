@@ -11,11 +11,14 @@ package ru.javawebinar.topjava.model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Meal {
     private final LocalDateTime dateTime;
+    private static AtomicInteger counter = new AtomicInteger(0);
 
     private final String description;
+    private final int id;
 
     private final int calories;
 
@@ -23,6 +26,11 @@ public class Meal {
         this.dateTime = dateTime;
         this.description = description;
         this.calories = calories;
+        this.id = counter.incrementAndGet ();
+    }
+
+    public  int getId() {
+        return id;
     }
 
     public LocalDateTime getDateTime() {
