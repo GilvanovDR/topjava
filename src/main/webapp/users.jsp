@@ -1,13 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--
-  ~ GilvanovDR (c) 2020.
-  --%>
-
-<%--
-  ~ GilvanovDR (c) 2020.
-  --%>
-
-<html>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<html lang="ru">
 <head>
     <title>Users</title>
 </head>
