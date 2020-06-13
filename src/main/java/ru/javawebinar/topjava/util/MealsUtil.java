@@ -5,8 +5,6 @@
 /*
  * GilvanovDR (c) 2020.
  */
-
-
 package ru.javawebinar.topjava.util;
 
 import ru.javawebinar.topjava.model.Meal;

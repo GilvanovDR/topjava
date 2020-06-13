@@ -5,7 +5,6 @@
 /*
  * GilvanovDR (c) 2020.
  */
-
 package ru.javawebinar.topjava.model;
 
 import java.time.LocalDateTime;
