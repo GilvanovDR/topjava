@@ -28,7 +28,7 @@ public class InMemoryMealRepository implements MealRepository {
             return meal;
         }
         // handle case: update, but not present in storage
-        if (meal.getOwnerId().equals(userId)) {
+        if (!isExistOwnerMeal(userId, meal)) {
             return null;
         }
         return repository.computeIfPresent(meal.getId(), (id, oldMeal) -> meal);
@@ -37,7 +37,7 @@ public class InMemoryMealRepository implements MealRepository {
     @Override
     public boolean delete(int id, Integer userId) {
         Meal meal = repository.get(id);
-        if (isExistOwnerMeal(userId, meal)) {
+        if (!isExistOwnerMeal(userId, meal)) {
             return false;
         }
         return repository.remove(id) != null;
