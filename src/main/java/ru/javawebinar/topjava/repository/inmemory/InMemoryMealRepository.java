@@ -30,7 +30,7 @@ public class InMemoryMealRepository implements MealRepository {
             return meal;
         }
         // handle case: update, but not present in storage
-        if (!isExistOwnerMeal(userId, meal)) {
+        if (!isOwnerMeal(userId, meal)) {
             return null;
         }
         return repository.computeIfPresent(meal.getId(), (id, oldMeal) -> meal);
@@ -39,7 +39,7 @@ public class InMemoryMealRepository implements MealRepository {
     @Override
     public boolean delete(int id, Integer userId) {
         Meal meal = repository.get(id);
-        if (!isExistOwnerMeal(userId, meal)) {
+        if (!isOwnerMeal(userId, meal)) {
             return false;
         }
         return repository.remove(id) != null;
@@ -48,7 +48,7 @@ public class InMemoryMealRepository implements MealRepository {
     @Override
     public Meal get(int id, Integer userId) {
         Meal meal = repository.get(id);
-        if (isExistOwnerMeal(userId, meal)) {
+        if (isOwnerMeal(userId, meal)) {
             return meal;
         }
         return null;
@@ -59,7 +59,7 @@ public class InMemoryMealRepository implements MealRepository {
         return repository.values().stream().filter(meal -> meal.getOwnerId().equals(userId)).collect(Collectors.toList());
     }
 
-    private boolean isExistOwnerMeal(Integer userId, Meal meal) {
+    private boolean isOwnerMeal(Integer userId, Meal meal) {
         return meal != null && meal.getOwnerId().equals(userId);
     }
 }
