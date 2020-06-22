@@ -21,6 +21,31 @@
     <h3><a href="index.html">Home</a></h3>
     <hr/>
     <h2>Meals</h2>
+    <div class="form-wrap">
+        <form method="get" action="meals">
+            <fieldset style="width:30%">
+                <div>
+                    <fieldset>
+                        Дата
+                        <label> от </label>
+                        <input type="date" name="DateFrom">
+                        <label> до </label>
+                        <input type="date" name="DateTo">
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        Время
+                        <label> от </label>
+                        <input type="time" name="TimeFrom">
+                        <label> до </label>
+                        <input type="time" name="TimeTo">
+                    </fieldset>
+                </div>
+                <br>
+                <button type="submit">Показать</button>
+            </fieldset>
+        </form>
+    </div>
     <a href="meals?action=create">Add Meal</a>
     <br><br>
     <table border="1" cellpadding="8" cellspacing="0">
