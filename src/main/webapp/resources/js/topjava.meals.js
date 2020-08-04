@@ -6,12 +6,12 @@ function updateFilteredTable() {
         type: "GET",
         url: mealAjaxUrl + "filter",
         data: $("#filter").serialize()
-    }).done(updateTable);
+    }).done(updateTableWData);
 }
 
 function clearFilter() {
     $("#filter")[0].reset();
-    $.get(mealAjaxUrl, updateTable);
+    $.get(mealAjaxUrl, updateTableWData);
 }
 
 $(function () {
